@@ -3,6 +3,7 @@
 ═══════════════════════════════════════════════════════════════
   TELEGRAM HOSTING BOT - Professional Cloud Hosting Platform
   Single-file deployment ready for Render.com 24/7 hosting
+  Compatible with Python 3.10 - 3.14
 ═══════════════════════════════════════════════════════════════
 
 Features:
