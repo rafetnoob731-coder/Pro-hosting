@@ -52,7 +52,7 @@ except ImportError:
     )
 
 # ─── CONFIGURATION ────────────────────────────────────────────
-BOT_TOKEN = os.environ.get("BOT_TOKEN", "YOUR_BOT_TOKEN_HERE")
+BOT_TOKEN = os.environ.get("BOT_TOKEN", "")
 ADMIN_USER_ID = int(os.environ.get("ADMIN_USER_ID", "0"))
 MAX_FILE_SIZE_MB = 50
 EXECUTION_TIMEOUT = 30  # seconds
@@ -1318,9 +1318,10 @@ def main():
     ProjectManager.load_projects()
 
     # Validate token
-    if BOT_TOKEN == "YOUR_BOT_TOKEN_HERE":
-        print("❌ ERROR: Set BOT_TOKEN environment variable!")
+    if not BOT_TOKEN or BOT_TOKEN == "YOUR_BOT_TOKEN_HERE":
+        print("❌ ERROR: BOT_TOKEN environment variable is not set!")
         print("   Get token from @BotFather on Telegram")
+        print("   Set it in Render Dashboard → Environment → BOT_TOKEN")
         sys.exit(1)
 
     print("🚀 Starting Telegram Hosting Bot...")
